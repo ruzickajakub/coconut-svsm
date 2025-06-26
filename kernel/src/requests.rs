@@ -115,7 +115,7 @@ pub extern "C" fn request_loop_main(cpu_index: usize) {
 
     // Suppress the use of IPIs before entering the guest, and ensure that all
     // other CPUs have done the same.
-    wait_for_ipi_block();
+    //wait_for_ipi_block();
 
     let mut guest_regs = Vec::<GuestRegister>::new();
 
