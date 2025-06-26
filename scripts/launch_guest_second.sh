@@ -177,11 +177,10 @@ $SUDO_CMD \
     -smp 4 \
     -no-reboot \
     -netdev user,id=vmnic -device e1000,netdev=vmnic,romfile= \
-    $IMAGE_DISK \
     -nographic \
-    -nic user,hostfwd=tcp::8888-:22 \
-    -monitor unix:qemu-monitor-socket,server,nowait \
-    -D 2025-05-15.log \
+    -nic user,hostfwd=tcp::9999-:22 \
+    -monitor unix:qemu-monitor-socket-second,server,nowait \
+    -D 2025-06-26-second.log \
     $COM1_SERIAL \
     $COM2_SERIAL \
     $COM3_SERIAL \
