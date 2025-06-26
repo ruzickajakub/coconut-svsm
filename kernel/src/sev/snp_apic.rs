@@ -67,7 +67,8 @@ impl ApicAccess for GHCBApicAccessor {
     fn icr_write(&self, icr: u64) -> Result<(), SvsmError> {
         // The #HV IPI can only be used if restricted injection is supported.
         // Otherwise, the IPI must be sent via an X2APIC ICR write.
-        if self.use_restr_inj() {
+        //if self.use_restr_inj() {
+        if false {
             current_ghcb().hv_ipi(icr)?;
         } else {
             self.apic_write(APIC_OFFSET_ICR, icr);
